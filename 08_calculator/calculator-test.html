@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const add = function(a, b) {
+	return a+b;
+};
+
+const subtract = function(a, b) {
+	return a-b;
+};
+
+const sum = function(array) {
+	return array.reduce(function(a, b) {
+        let add = a + b;
+        
+    return add;
+  }, 0)
+};
+
+let test = sum([1, 2]);
+
+
+const multiply = function(array) {
+	return array.reduce(function(a, b) {
+    return a * b;
+  }, 1)
+};
+
+function power(array) {
+return Math.pow(array[0], array[1])
+};
+
+
+const factorial = function(number) {
+  let total = 1;
+	if (number == 0) {return 1; }
+  else {
+    for (i = number; i > 0; i--) {
+      total *= i;
+    }
+    return total;
+  }
+};
+
+console.log(factorial(5));
+
+
+    </script>
+</body>
+</html>
