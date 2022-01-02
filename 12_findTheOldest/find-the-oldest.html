@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const findTheOldest = function(array) {
+   let sorted =  array.sort(function(item1, item2) {
+       let age1 = 0
+       let age2 = 0
+       
+       if (item1.hasOwnProperty('yearOfDeath')){
+            age1 = item1.yearOfDeath - item1.yearOfBirth;
+       }
+       else {
+           age1 = new Date().getFullYear - item1.yearOfBirth;
+       }
+       if (item2.hasOwnProperty('yearOfDeath')) {
+        age2 = item2.yearOfDeath - item2.yearOfBirth;
+       }
+       else {
+        age2 = new Date().getFullYear() - item2.yearOfBirth;
+        console.log(age2)
+       }
+        if (age1 > age2) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    })
+    return sorted.at(-1);
+};
+
+console.log(findTheOldest([
+      {
+        name: "Carly",
+        yearOfBirth: 2018,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ]))
+    </script>
+</body>
+</html>
